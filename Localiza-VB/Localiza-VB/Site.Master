@@ -25,8 +25,8 @@
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                         Pantalla de bienvenida <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" href="Account/Login.aspx"/> ]
+                    </LoggedInTemplate> 
                 </asp:LoginView>
             </div>
             <div class="clear hideSkiplink">
