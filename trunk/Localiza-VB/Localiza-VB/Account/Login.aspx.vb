@@ -10,7 +10,7 @@
     End Sub
 
     Protected Sub ChangePasswordButton_Click(ByVal sender As Object, ByVal e As EventArgs)
-        '     Response.Redirect("ChangePassword.aspx")
+        Response.Redirect("ChangePassword.aspx")
     End Sub
 
 End Class
