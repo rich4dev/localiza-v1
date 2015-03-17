@@ -9,6 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{
 		..\Librerias\NHibernate.dll = ..\Librerias\NHibernate.dll
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{3F9884ED-4086-47A7-88B8-07BF34B4C587}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\localizaV1.sql = Scripts\localizaV1.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
