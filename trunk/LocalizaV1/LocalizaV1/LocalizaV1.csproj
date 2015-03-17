@@ -58,7 +58,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dominio\Usuario.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Usuario.hbm.xml" />
     <Content Include="Service1.svc" />
     <Content Include="UsuarioSVC.svc" />
     <Content Include="Web.config" />
