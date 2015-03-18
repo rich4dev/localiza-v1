@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestProject1.UsuarioTest;
+using TestProject1.ServiceCliente;
 
 namespace TestProject1
 {
@@ -16,19 +17,44 @@ namespace TestProject1
         [TestMethod]
         public void TestCrear()
         {
-            UsuarioSVCClient proxy = new UsuarioSVCClient();
+            ClienteSVCClient proxy = new ClienteSVCClient();
 
             string nombre = "Alessandra";
-            string correo = "hola@gmail.com";
-            string password = "zsdasd";
+            string paterno = "diaz";
+            string materno = "puente";
+            string genero = "F";
+            string dni = "123458";
+            string email = "Alessandra@gmail.com";
+            string telefono = "12121212";
+            string direccion = "av. aviacion 123";
+            string distrito = "san borja";
 
-            Usuario result = proxy.CrearUsuario(nombre,correo,password);
+            bool valida = proxy.validaDni(dni);
+            if (valida == true)
+            {
+                Cliente result = proxy.CrearCliente(nombre, paterno, materno, genero, dni, email, telefono, direccion, distrito);
 
-            string mensaje = "Cliente " + result.Nombre + " creado";
+                string mensaje = "Cliente " + result.nombre + " creado";
 
-            Assert.AreEqual("Cliente Gianpiere creado",mensaje);
+                Assert.AreEqual("Cliente Alessandra creado", mensaje);
+            }
+            else
+            {
+                string mensaje = proxy.mensajes(1); ;
+
+                Assert.AreEqual("La cantidad de digitos debe ser 8", mensaje);
+            }
+           
         }
+        [TestMethod]
+        public void TestValidar()
+        {
+            ClienteSVCClient proxy = new ClienteSVCClient();
 
+            bool valida = proxy.validaDni("1234568");
+
+            Assert.IsFalse(valida);
+        }
         
     }
 }

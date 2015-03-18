@@ -113,5 +113,11 @@ namespace LocalizaV1
 
             return mensaje;
         }
+
+
+        public bool validaCliente(string dni)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
