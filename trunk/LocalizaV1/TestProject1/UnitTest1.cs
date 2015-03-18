@@ -26,7 +26,7 @@ namespace TestProject1
 
             string mensaje = "Cliente " + result.Nombre + " creado";
 
-            Assert.AreEqual("Cliente Alessandra creado", mensaje);
+            Assert.AreEqual("Cliente Gianpiere creado",mensaje);
         }
 
         

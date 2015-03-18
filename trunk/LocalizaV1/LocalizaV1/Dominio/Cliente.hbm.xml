@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="LocalizaV1"
+                   namespace="LocalizaV1.Dominio"
+                   default-lazy="false">
+
+  <class name="Cliente" table="t_cliente">
+    <id name="idCliente" column="idCliente">
+      <generator class="increment" />
+    </id>
+    <property name="nombre" column="nombre" />
+    <property name="apPaterno" column="apPaterno" />
+    <property name="apMaterno" column="apMaterno" />
+    <property name="genero" column="genero" />
+    <property name="dni" column="dni" />
+    <property name="email" column="email" />
+    <property name="telefono" column="telefono" />
+    <property name="direccion" column="direccion" />
+    <property name="distrito" column="distrito" />
+  </class>
+</hibernate-mapping>

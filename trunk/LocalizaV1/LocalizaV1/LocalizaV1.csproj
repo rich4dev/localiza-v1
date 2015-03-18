@@ -13,6 +13,7 @@
     <RootNamespace>LocalizaV1</RootNamespace>
     <AssemblyName>LocalizaV1</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Dominio\Usuario.hbm.xml" />
+    <Content Include="ClienteSVC.svc" />
+    <EmbeddedResource Include="Dominio\Cliente.hbm.xml" />
     <Content Include="Service1.svc" />
     <Content Include="UsuarioSVC.svc" />
     <Content Include="Web.config" />
@@ -70,9 +73,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteSVC.svc.cs">
+      <DependentUpon>ClienteSVC.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Usuario.cs" />
+    <Compile Include="IClienteSVC.cs" />
     <Compile Include="IUsuarioSVC.cs" />
     <Compile Include="Persistencia\BaseDAO.cs" />
+    <Compile Include="Persistencia\ClienteDAO.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
     <Compile Include="Persistencia\NHibernateHelper.cs" />
     <Compile Include="Persistencia\UsuarioDAO.cs" />
