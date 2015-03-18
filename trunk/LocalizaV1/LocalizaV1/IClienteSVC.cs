@@ -29,6 +29,9 @@ namespace LocalizaV1
         bool validaDni(string dni);
 
         [OperationContract]
+        bool validaCliente(string dni);
+
+        [OperationContract]
         string mensajes(int valor);
     }
 }
