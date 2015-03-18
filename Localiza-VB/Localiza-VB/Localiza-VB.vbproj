@@ -52,6 +52,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -94,6 +96,15 @@
     <Content Include="Envio\Cliente.aspx" />
     <Content Include="Envio\Envios.aspx" />
     <Content Include="Envio\SeguimientoEnvio.aspx" />
+    <None Include="Service References\ServiceCliente\configuration91.svcinfo" />
+    <None Include="Service References\ServiceCliente\configuration.svcinfo" />
+    <None Include="Service References\ServiceCliente\Localiza_VB.ServiceCliente.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -189,6 +200,11 @@
     </Compile>
     <Compile Include="prueba\Class1.vb" />
     <Compile Include="prueba\Class2.vb" />
+    <Compile Include="Service References\ServiceCliente\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
@@ -217,9 +233,25 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <Content Include="Site.Master" />
+    <None Include="Service References\ServiceCliente\ClienteSVC.wsdl" />
+    <None Include="Service References\ServiceCliente\ClienteSVC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceCliente\ClienteSVC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceCliente\ClienteSVC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceCliente\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

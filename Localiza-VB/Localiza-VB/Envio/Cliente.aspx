@@ -81,6 +81,7 @@
             <asp:TextBox ID="C_Direccion" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="C_Guardar" runat="server" Text="Guardar" />
+            <asp:Label id="lbltexto" runat="server"/>
 
  </section>
 </asp:Content>
