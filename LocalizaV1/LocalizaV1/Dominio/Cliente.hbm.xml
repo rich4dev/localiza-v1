@@ -13,9 +13,10 @@
     <property name="apMaterno" column="apMaterno" />
     <property name="genero" column="genero" />
     <property name="dni" column="dni" />
-    <property name="email" column="email" />
+    <property name="email" column="correo" />
     <property name="telefono" column="telefono" />
     <property name="direccion" column="direccion" />
     <property name="distrito" column="distrito" />
+    <property name="estado" column="estado" />
   </class>
 </hibernate-mapping>

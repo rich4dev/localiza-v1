@@ -22,14 +22,12 @@ namespace LocalizaV1
                              string telefono, string direccion, string distrito);
         [OperationContract]
         void EliminarCliente(int codigo);
+
         [OperationContract]
         List<Cliente> ListarCliente();
 
         [OperationContract]
         bool validaDni(string dni);
-
-        [OperationContract]
-        bool validaCliente(string dni);
 
         [OperationContract]
         string mensajes(int valor);
