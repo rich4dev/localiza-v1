@@ -74,7 +74,7 @@ namespace LocalizaV1
 
         public List<Cliente> ListarCliente()
         {
-            return clienteDAO.ListarTodos().ToList();
+            return ClienteDAO.ListarTodos().ToList();
         }
 
 
@@ -113,6 +113,11 @@ namespace LocalizaV1
             };
 
             return mensaje;
+        }
+
+        public List<Cliente> BuscarDni(string dni)
+        {
+            return ClienteDAO.BuscarPorDNI(dni).ToList();
         }
 
     }
