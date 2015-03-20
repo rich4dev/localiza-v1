@@ -35,7 +35,8 @@ namespace LocalizaV1
                 email=email,
                 telefono=telefono,
                 direccion=direccion,
-                distrito=distrito
+                distrito=distrito,
+                estado = '1',
             };
 
             return ClienteDAO.Crear(cliente);
@@ -114,10 +115,5 @@ namespace LocalizaV1
             return mensaje;
         }
 
-
-        public bool validaCliente(string dni)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
