@@ -31,5 +31,9 @@ namespace LocalizaV1
 
         [OperationContract]
         string mensajes(int valor);
+
+        [OperationContract]
+        List<Cliente> BuscarDni(string dni);
+
     }
 }
