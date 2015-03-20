@@ -120,5 +120,24 @@ namespace LocalizaV1
             return ClienteDAO.BuscarPorDNI(dni).ToList();
         }
 
+
+
+        public bool encuentraDni(string dni)
+        {
+            bool respuesta;
+
+            List<Cliente> resultado = ClienteDAO.BuscarPorDNI(dni).ToList();
+
+            if (resultado.Count == 0)
+
+            respuesta = false;
+ 
+            else
+
+            respuesta = true;
+
+            return respuesta;
+
+        }
     }
 }
