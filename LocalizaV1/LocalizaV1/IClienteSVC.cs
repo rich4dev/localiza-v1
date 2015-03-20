@@ -28,12 +28,16 @@ namespace LocalizaV1
 
         [OperationContract]
         bool validaDni(string dni);
-
+        
+        [OperationContract]
+        bool encuentraDni(string dni);
+        
         [OperationContract]
         string mensajes(int valor);
 
         [OperationContract]
         List<Cliente> BuscarDni(string dni);
+
 
     }
 }
