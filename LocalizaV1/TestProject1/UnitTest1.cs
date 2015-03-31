@@ -8,6 +8,7 @@ using TestProject1.ServiceCliente;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
+using TestProject1.Clases;
 
 namespace TestProject1
 {
@@ -61,7 +62,7 @@ namespace TestProject1
         [TestMethod]
         public void TestCrearEnvio()
         {
-            string postdata = "{\"IdEnvio\":\"11\",\"IdCliente\":\"1\",\"Cantidad\":\"10\",\"Peso\":\"123\",\"DestinoInicio\":\"Lima\",\"DestinoFin\":\"Trujillo\",\"IdTransporte\":\"1\",\"Estado\":\"1\"}";
+            string postdata = "{\"idEnvio\":\"11\",\"idCliente\":\"1\",\"cantidad\":\"10\",\"peso\":\"123\",\"destinoInicio\":\"Lima\",\"destinoFin\":\"trujillo\",\"idTransporte\":\"1\",\"estado\":\"1\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:49202/EnvioSVC.svc/Envios");
             req.Method = "POST";
@@ -74,8 +75,8 @@ namespace TestProject1
                 StreamReader reader = new StreamReader(res.GetResponseStream());
                 string clientejson = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
-                Cliente crear = js.Deserialize<Cliente>(clientejson);
-                Assert.AreEqual("Lionel", crear.nombre);
+                Envios crear = js.Deserialize<Envios>(clientejson);
+                Assert.AreEqual("11", crear.idEnvio);
           
         }
         

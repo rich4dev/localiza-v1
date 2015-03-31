@@ -8,20 +8,20 @@ namespace TestProject1.Clases
     public class Envios
     {
        
-        public string IdEnvio { get; set; }
+        public string idEnvio { get; set; }
       
-        public string IdCliente { get; set; }
+        public string idCliente { get; set; }
        
-        public string Cantidad { get; set; }
+        public string cantidad { get; set; }
        
-        public string Peso { get; set; }
+        public string peso { get; set; }
     
-        public string DestinoInicio { get; set; }
+        public string destinoInicio { get; set; }
      
-        public string DestinoFin { get; set; }
+        public string destinoFin { get; set; }
        
-        public string IdTransporte { get; set; }
+        public string idTransporte { get; set; }
         
-        public string Estado { get; set; }
+        public string estado { get; set; }
     }
 }
