@@ -4,19 +4,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <section>
-            DNI Cliente<br />
-            <asp:TextBox ID="E_DNI" runat="server"></asp:TextBox>
-            <br />
-            Tipo envío<br />
-&nbsp;<asp:DropDownList ID="E_TipoEnvio" runat="server">
-    <asp:ListItem>PAQUETE</asp:ListItem>
-    <asp:ListItem>SOBRE</asp:ListItem>
-            </asp:DropDownList>
+    Codigo Envio<section><br />
+            <asp:TextBox ID="E_CODIGO" runat="server"></asp:TextBox>
             <br />
     <br />
+    <section>DNI<br />
+            <asp:TextBox ID="E_DNI" runat="server"></asp:TextBox>
+</section>
+            <br />
+            <br />
     Cantidad<br />
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:TextBox ID="E_Cantidad" runat="server"></asp:TextBox>
             <br />
             Peso<br />
             <asp:TextBox ID="E_Peso" runat="server"></asp:TextBox>
@@ -29,6 +27,13 @@
             <br />
             Destino fin<br />
             <asp:DropDownList ID="E_DestinoF" runat="server">
+                <asp:ListItem>RAUL QUISPE</asp:ListItem>
+                <asp:ListItem>CRITHIAN PEREZ</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <br />
+    Chofer<br />
+            <asp:DropDownList ID="E_Chofer" runat="server">
                 <asp:ListItem>AREQUIPA</asp:ListItem>
                 <asp:ListItem>LAMBAYEQUE</asp:ListItem>
                 <asp:ListItem>LA LIBERTAD</asp:ListItem>
@@ -37,18 +42,7 @@
             </asp:DropDownList>
             <br />
             <br />
-            <br />
             Añadir unidad transporte<br />
-        <asp:GridView ID="E_ListaUnidadTransporte" runat="server">
-            <Columns>
-                    <asp:BoundField HeaderText="Placa" />
-                    <asp:BoundField HeaderText="Chofer" />
-                    <asp:BoundField HeaderText="Fecha salida" />
-                    <asp:BoundField HeaderText="Fecha de llegada" />
-                    <asp:ButtonField Text="Asignar" />
-                    <asp:BoundField HeaderText="Capacidad Disponible" />
-            </Columns>
-            </asp:GridView>
             <asp:Button ID="E_Guardar" runat="server" Text="Guardar" />
             <br />
 </section>
