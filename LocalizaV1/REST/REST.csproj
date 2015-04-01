@@ -70,6 +70,7 @@
     <Compile Include="IEnviosSVC.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
     <Compile Include="Persistencia\EnvioDAO.cs" />
+    <Compile Include="Persistencia\TransporteDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

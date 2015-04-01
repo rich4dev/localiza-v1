@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.Text;
 using REST.Dominio;
 using REST.Persistencia;
+using System.ServiceModel.Web;
+using System.Net;
 
 namespace REST
 {
@@ -13,9 +15,20 @@ namespace REST
     public class EnviosSVC : IEnviosSVC
     {
         private EnvioDAO dao = new EnvioDAO();
+        private TransporteDAO tdao = new TransporteDAO();
 
         public Envio CrearEnvio(Envio envioACrear)
         {
+            bool valida = false;
+
+            valida = tdao.ValidarCarga(Convert.ToInt32(envioACrear.IdTransporte), Convert.ToInt32(envioACrear.Peso), Convert.ToInt32(envioACrear.Cantidad));
+
+            if (valida==false){
+
+                throw new WebFaultException<string>("El Peso excede el Peso Maximo del transporte, asigne otro tranpsorte", HttpStatusCode.InternalServerError);
+            }
+
+            tdao.ActualizarCarga(Convert.ToInt32(envioACrear.IdTransporte), Convert.ToInt32(envioACrear.Peso), Convert.ToInt32(envioACrear.Cantidad));
             return dao.Crear(envioACrear);
         }
 
