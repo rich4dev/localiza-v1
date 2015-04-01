@@ -62,7 +62,7 @@ namespace TestProject1
         [TestMethod]
         public void TestCrearEnvio()
         {
-            string postdata = "{\"IdEnvio\":\"2\",\"IdCliente\":\"1\",\"Cantidad\":\"2\",\"Peso\":\"500\",\"DestinoInicio\":\"Lima\",\"DestinoFin\":\"trujillo\",\"IdTransporte\":\"1\",\"Estado\":\"1\"}";
+            string postdata = "{\"IdEnvio\":\"4\",\"IdCliente\":\"1\",\"Cantidad\":\"2\",\"Peso\":\"500\",\"DestinoInicio\":\"Lima\",\"DestinoFin\":\"trujillo\",\"IdTransporte\":\"1\",\"Estado\":\"1\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:31030/EnviosSVC.svc/Envios");
             req.Method = "POST";
@@ -78,7 +78,7 @@ namespace TestProject1
                 string clientejson = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 Envios crear = js.Deserialize<Envios>(clientejson);
-                Assert.AreEqual("2", crear.IdEnvio);
+                Assert.AreEqual("3", crear.IdEnvio);
             }
             catch(WebException e)
             {

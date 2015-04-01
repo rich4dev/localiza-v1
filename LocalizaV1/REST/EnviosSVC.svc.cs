@@ -26,6 +26,7 @@ namespace REST
             if (valida==false){
 
                 throw new WebFaultException<string>("El Peso excede el Peso Maximo del transporte, asigne otro tranpsorte", HttpStatusCode.InternalServerError);
+
             }
 
             tdao.ActualizarCarga(Convert.ToInt32(envioACrear.IdTransporte), Convert.ToInt32(envioACrear.Peso), Convert.ToInt32(envioACrear.Cantidad));
