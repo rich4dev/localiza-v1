@@ -98,6 +98,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="encuentraDni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="encuentraDniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="encuentraDniResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="mensajes">
     <xs:complexType>
       <xs:sequence>
@@ -109,6 +123,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="mensajesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarDni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarDniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LocalizaV1.Dominio" minOccurs="0" name="BuscarDniResult" nillable="true" type="q5:ArrayOfCliente" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
