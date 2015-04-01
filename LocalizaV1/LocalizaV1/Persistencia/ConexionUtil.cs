@@ -14,12 +14,6 @@ namespace LocalizaV1.Persistencia
 
         }
 
-        public static string Cadena
-        {
-            get
-            {
-                return "Data Source=(local);Initial Catalog=Localiza;Integrated Security=SSPI;";
-            }
-        }
+       
     }
 }
