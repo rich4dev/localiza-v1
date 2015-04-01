@@ -62,7 +62,7 @@ namespace TestProject1
         [TestMethod]
         public void TestCrearEnvio()
         {
-            string postdata = "{\"IdEnvio\":\"12\",\"IdCliente\":\"1\",\"Cantidad\":\"10\",\"Peso\":\"123\",\"DestinoInicio\":\"Lima\",\"DestinoFin\":\"trujillo\",\"IdTransporte\":\"1\",\"Estado\":\"1\"}";
+            string postdata = "{\"IdEnvio\":\"2\",\"IdCliente\":\"1\",\"Cantidad\":\"2\",\"Peso\":\"500\",\"DestinoInicio\":\"Lima\",\"DestinoFin\":\"trujillo\",\"IdTransporte\":\"1\",\"Estado\":\"1\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:31030/EnviosSVC.svc/Envios");
             req.Method = "POST";
@@ -70,14 +70,26 @@ namespace TestProject1
             req.ContentType = "application/json";
             var reqStream = req.GetRequestStream();
             reqStream.Write(data, 0, data.Length);
-                      
+
+            try
+            {
                 var res = (HttpWebResponse)req.GetResponse();
                 StreamReader reader = new StreamReader(res.GetResponseStream());
                 string clientejson = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 Envios crear = js.Deserialize<Envios>(clientejson);
-                Assert.AreEqual("12", crear.IdEnvio);
-          
+                Assert.AreEqual("2", crear.IdEnvio);
+            }
+            catch(WebException e)
+            {
+                 HttpStatusCode code = ((HttpWebResponse)e.Response).StatusCode;
+                string message = ((HttpWebResponse)e.Response).StatusDescription;
+                StreamReader reader = new StreamReader(e.Response.GetResponseStream());
+                string error = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                string mensaje = js.Deserialize<string>(error);
+                Assert.AreEqual("El Peso excede el Peso Maximo del transporte, asigne otro tranpsorte", mensaje);
+            }
         }
         
     }
