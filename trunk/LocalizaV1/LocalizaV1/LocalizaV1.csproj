@@ -62,7 +62,6 @@
     <EmbeddedResource Include="Dominio\Usuario.hbm.xml" />
     <Content Include="ClienteSVC.svc" />
     <EmbeddedResource Include="Dominio\Cliente.hbm.xml" />
-    <Content Include="Service1.svc" />
     <Content Include="UsuarioSVC.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -85,9 +84,6 @@
     <Compile Include="Persistencia\ConexionUtil.cs" />
     <Compile Include="Persistencia\NHibernateHelper.cs" />
     <Compile Include="Persistencia\UsuarioDAO.cs" />
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioSVC.svc.cs">
       <DependentUpon>UsuarioSVC.svc</DependentUpon>
