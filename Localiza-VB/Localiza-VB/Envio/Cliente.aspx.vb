@@ -94,4 +94,8 @@ Public Class Cliente
         End If
 
     End Sub
+
+    Protected Sub C_DNI_TextChanged(sender As Object, e As EventArgs) Handles C_DNI.TextChanged
+
+    End Sub
 End Class
