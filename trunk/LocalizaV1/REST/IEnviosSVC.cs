@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.ServiceModel.Web;
-using LocalizaV1.Dominio;
+using REST.Dominio;
 
-namespace LocalizaV1
+namespace REST
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IEnvioSVC" en el código y en el archivo de configuración a la vez.
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IEnviosSVC" in both code and config file together.
     [ServiceContract]
-    public interface IEnvioSVC
+    public interface IEnviosSVC
     {
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "Envios", ResponseFormat = WebMessageFormat.Json)]
@@ -20,10 +20,6 @@ namespace LocalizaV1
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "Envios/{idEnvio}", ResponseFormat = WebMessageFormat.Json)]
         Envio ObtenerEnvio(string idEnvio);
-
-        [OperationContract]
-        [WebInvoke(Method = "PUT", UriTemplate = "Envios", ResponseFormat = WebMessageFormat.Json)]
-        Envio ModificarEnvio(Envio envioAModificar);
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "Eliminar/{idEnvio}", ResponseFormat = WebMessageFormat.Json)]

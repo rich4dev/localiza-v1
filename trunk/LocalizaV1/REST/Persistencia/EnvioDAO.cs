@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using LocalizaV1.Dominio;
+using REST.Dominio;
 using System.Data.SqlClient;
 
-namespace LocalizaV1.Persistencia
+namespace REST.Persistencia
 {
     public class EnvioDAO
     {
-        public Envio Crear(Envio envioACrear)
+         public Envio Crear(Envio envioACrear)
         {
             Envio envioCreado = null;
             string sql = "INSERT INTO t_envio VALUES (@idEnvio, @idCliente, @cantidad, @peso, @destinoInicio, @destinoFin, @idTransporte, @estado)";
@@ -90,5 +90,4 @@ namespace LocalizaV1.Persistencia
             return null;
         }
     }
-
 }

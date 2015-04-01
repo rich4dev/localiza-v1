@@ -4,13 +4,13 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using LocalizaV1.Dominio;
-using LocalizaV1.Persistencia;
+using REST.Dominio;
+using REST.Persistencia;
 
-namespace LocalizaV1
+namespace REST
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "EnvioSVC" en el código, en svc y en el archivo de configuración a la vez.
-    public class EnvioSVC : IEnvioSVC
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "EnviosSVC" in code, svc and config file together.
+    public class EnviosSVC : IEnviosSVC
     {
         private EnvioDAO dao = new EnvioDAO();
 
@@ -22,11 +22,6 @@ namespace LocalizaV1
         public Envio ObtenerEnvio(string idEnvio)
         {
             return dao.Obtener(idEnvio);
-        }
-
-        public Envio ModificarEnvio(Envio envioAModificar)
-        {
-            throw new NotImplementedException();
         }
 
         public string EliminarEnvio(string idEnvio)
