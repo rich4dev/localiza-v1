@@ -43,6 +43,17 @@
             <br />
             <br />
             Añadir unidad transporte<br />
+
+             <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem Value="1">Transporte_1</asp:ListItem>
+                <asp:ListItem Value="2">Transporte_2</asp:ListItem>
+                <asp:ListItem Value="3">Transporte_3</asp:ListItem>
+                <asp:ListItem Value="4">Transporte_4</asp:ListItem>
+                <asp:ListItem Value="5">Transporte_5</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <br />
+            
             <asp:Button ID="E_Guardar" runat="server" Text="Guardar" />
             <br />
 </section>

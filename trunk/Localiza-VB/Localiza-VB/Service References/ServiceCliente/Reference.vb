@@ -46,6 +46,9 @@ Namespace ServiceCliente
         Private emailField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private estadoField As Char
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private generoField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -146,6 +149,19 @@ Namespace ServiceCliente
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property estado() As Char
+            Get
+                Return Me.estadoField
+            End Get
+            Set
+                If (Me.estadoField.Equals(value) <> true) Then
+                    Me.estadoField = value
+                    Me.RaisePropertyChanged("estado")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property genero() As String
             Get
                 Return Me.generoField
@@ -229,8 +245,14 @@ Namespace ServiceCliente
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IClienteSVC/validaDni", ReplyAction:="http://tempuri.org/IClienteSVC/validaDniResponse")>  _
         Function validaDni(ByVal dni As String) As Boolean
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IClienteSVC/encuentraDni", ReplyAction:="http://tempuri.org/IClienteSVC/encuentraDniResponse")>  _
+        Function encuentraDni(ByVal dni As String) As Boolean
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IClienteSVC/mensajes", ReplyAction:="http://tempuri.org/IClienteSVC/mensajesResponse")>  _
         Function mensajes(ByVal valor As Integer) As String
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IClienteSVC/BuscarDni", ReplyAction:="http://tempuri.org/IClienteSVC/BuscarDniResponse")>  _
+        Function BuscarDni(ByVal dni As String) As ServiceCliente.Cliente()
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -288,8 +310,16 @@ Namespace ServiceCliente
             Return MyBase.Channel.validaDni(dni)
         End Function
         
+        Public Function encuentraDni(ByVal dni As String) As Boolean Implements ServiceCliente.IClienteSVC.encuentraDni
+            Return MyBase.Channel.encuentraDni(dni)
+        End Function
+        
         Public Function mensajes(ByVal valor As Integer) As String Implements ServiceCliente.IClienteSVC.mensajes
             Return MyBase.Channel.mensajes(valor)
+        End Function
+        
+        Public Function BuscarDni(ByVal dni As String) As ServiceCliente.Cliente() Implements ServiceCliente.IClienteSVC.BuscarDni
+            Return MyBase.Channel.BuscarDni(dni)
         End Function
     End Class
 End Namespace

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LocalizaV1.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LocalizaV1.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/LocalizaV1.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LocalizaV1.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49202/ClienteSVC.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="Cliente">
     <xs:sequence>
       <xs:element minOccurs="0" name="apMaterno" nillable="true" type="xs:string" />
@@ -8,6 +9,7 @@
       <xs:element minOccurs="0" name="distrito" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" type="ser:char" />
       <xs:element minOccurs="0" name="genero" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="idCliente" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />

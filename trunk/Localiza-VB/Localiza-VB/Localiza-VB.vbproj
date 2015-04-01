@@ -96,32 +96,12 @@
     <Content Include="Envio\Cliente.aspx" />
     <Content Include="Envio\Envios.aspx" />
     <Content Include="Envio\SeguimientoEnvio.aspx" />
-    <None Include="Service References\EnviosService\EnviosSVC.wsdl" />
-    <None Include="Service References\EnviosService\EnviosSVC.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\EnviosService\EnviosSVC1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\EnviosService\EnviosSVC2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\EnviosService\Localiza_VB.EnviosService.Envio.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ServiceCliente\configuration91.svcinfo" />
     <None Include="Service References\ServiceCliente\configuration.svcinfo" />
     <None Include="Service References\ServiceCliente\Localiza_VB.ServiceCliente.Cliente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceCliente\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
-    <None Include="Service References\EnviosService\EnviosSVC.disco" />
-    <None Include="Service References\EnviosService\configuration91.svcinfo" />
-    <None Include="Service References\EnviosService\configuration.svcinfo" />
-    <None Include="Service References\EnviosService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
@@ -167,6 +147,9 @@
     <Compile Include="Account\Login.aspx.vb">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Clases\Envios.vb">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
@@ -220,11 +203,6 @@
     </Compile>
     <Compile Include="prueba\Class1.vb" />
     <Compile Include="prueba\Class2.vb" />
-    <Compile Include="Service References\EnviosService\Reference.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\ServiceCliente\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -276,7 +254,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\EnviosService\" />
     <WCFMetadataStorage Include="Service References\ServiceCliente\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />

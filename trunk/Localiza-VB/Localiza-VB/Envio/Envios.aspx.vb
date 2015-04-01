@@ -1,4 +1,9 @@
-﻿Imports Localiza_VB.EnviosService
+﻿Imports System.Web
+Imports System.Net
+Imports System.IO
+Imports System.Web.Script.Serialization
+
+
 Public Class Envios
     Inherits System.Web.UI.Page
 
@@ -11,31 +16,37 @@ Public Class Envios
     End Sub
 
     Protected Sub E_Guardar_Click(sender As Object, e As EventArgs) Handles E_Guardar.Click
-        Dim rest As EnviosSVCClient = New EnviosSVCClient()
-        Dim codigo As String = E_CODIGO.Text
-        Dim DNI As String = E_DNI.Text
-        Dim cantidad As String = E_Cantidad.Text
-        Dim peso As String = E_Peso.Text
-        Dim destinoInicio As String = E_DestinoIni.Text
-        Dim destinoFinal As String = E_DestinoF.Text
-        Dim chofer As String = E_Chofer.Text
-        Dim ESTADO As String = "1"
 
-        rest.CrearEnvio()
+
+        Dim request As HttpWebRequest = DirectCast(HttpWebRequest.Create("http://localhost:31030/EnviosSVC.svc/Envios"), HttpWebRequest)
+        Dim data As String = "{\'IdEnvio\':\'2\',\'IdCliente\':\'1\',\'Cantidad\':\'2\',\'Peso\':\'500\',\'DestinoInicio\':\'Lima\',\'DestinoFin\':\'trujillo\',\'IdTransporte\':\'2\',\'Estado\':\'1\'}"
+        ''Dim data As String = 
+        request.Method = "POST"
+        request.ContentType = "application/json"
+
+        Dim encoding As New System.Text.UTF8Encoding()
+        Dim bytes As Byte() = encoding.GetBytes(data)
+
+        request.ContentLength = bytes.Length
+
+        Using requestStream As Stream = request.GetRequestStream()
+            ' Send the data.
+            requestStream.Write(bytes, 0, bytes.Length)
+        End Using
+
+        Dim var As HttpWebResponse = request.GetResponse()
+        Dim reader As StreamReader = New StreamReader(var.GetResponseStream())
+        Dim jason As String = reader.ReadToEnd()
+        Dim js As JavaScriptSerializer = New JavaScriptSerializer()
+        Dim envio As Envios = js.Deserialize(Of Envios)(jason)
+
+
+
+
+
+
     End Sub
 
-    Protected Sub tipoEnvio()
-
-        Dim codigo As String = E_CODIGO.Text
-        Dim DNI As String = E_DNI.Text
-        Dim cantidad As String = E_Cantidad.Text
-        Dim peso As String = E_Peso.Text
-        Dim destinoInicio As String = E_DestinoIni.Text
-        Dim destinoFinal As String = E_DestinoF.Text
-        Dim chofer As String = E_Chofer.Text
-        Dim ESTADO As String = "1"
-
-    End Sub
 
 
 End Class
