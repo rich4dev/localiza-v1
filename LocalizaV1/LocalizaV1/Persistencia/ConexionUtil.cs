@@ -10,7 +10,7 @@ namespace LocalizaV1.Persistencia
 
         public static string ObtenerCadena()
         {
-            return "Data Source=(local); Initial Catalog=Localiza;Integrated Security=SSPI;";
+            return "Data Source=.; Initial Catalog=Localiza;Integrated Security=SSPI;";
 
         }
 

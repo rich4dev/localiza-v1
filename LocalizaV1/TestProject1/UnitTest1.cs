@@ -21,6 +21,7 @@ namespace TestProject1
         [TestMethod]
         public void TestCrear()
         {
+            
             ClienteSVCClient proxy = new ClienteSVCClient();
 
             string nombre = "Alessandra";
@@ -52,7 +53,7 @@ namespace TestProject1
         }
         [TestMethod]
         public void TestValidar()
-        {
+        {  
             ClienteSVCClient proxy = new ClienteSVCClient();
 
             bool valida = proxy.validaDni("1234568");
@@ -62,7 +63,7 @@ namespace TestProject1
         [TestMethod]
         public void TestCrearEnvio()
         {
-            string postdata = "{\"IdEnvio\":\"4\",\"IdCliente\":\"1\",\"Cantidad\":\"2\",\"Peso\":\"500\",\"DestinoInicio\":\"Lima\",\"DestinoFin\":\"trujillo\",\"IdTransporte\":\"1\",\"Estado\":\"1\"}";
+            string postdata = "{\"IdEnvio\":\"4\",\"IdCliente\":\"1\",\"Cantidad\":\"2\",\"Peso\":\"100\",\"DestinoInicio\":\"Lima\",\"DestinoFin\":\"Trujillo\",\"IdTransporte\":\"1\",\"Estado\":\"1\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:31030/EnviosSVC.svc/Envios");
             req.Method = "POST";
@@ -78,7 +79,7 @@ namespace TestProject1
                 string clientejson = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 Envios crear = js.Deserialize<Envios>(clientejson);
-                Assert.AreEqual("3", crear.IdEnvio);
+                Assert.AreEqual("2", crear.IdEnvio);
             }
             catch(WebException e)
             {
@@ -88,7 +89,7 @@ namespace TestProject1
                 string error = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 string mensaje = js.Deserialize<string>(error);
-                Assert.AreEqual("El Peso excede el Peso Maximo del transporte, asigne otro tranpsorte", mensaje);
+                Assert.AreEqual("El Peso excede el Peso Maximo del transporte, asigne otro tranpsort", mensaje);
             }
         }
         

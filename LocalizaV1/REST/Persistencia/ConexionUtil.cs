@@ -11,7 +11,7 @@ namespace REST.Persistencia
         {
             get
             {
-                return "Data Source=(local);Initial Catalog=Localiza;Integrated Security=SSPI;";
+                return "Data Source=.;Initial Catalog=Localiza;Integrated Security=SSPI;";
             }
         }
     }
