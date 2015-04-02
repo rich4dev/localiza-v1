@@ -11,14 +11,14 @@ namespace REST.Persistencia
         public void ActualizarCarga(int idTransp,int peso,int cantidad)
         {
 
-            string sql = "update t_transporte set cargaActual=@peso where idTransporte=@idEnvio";
+            string sql = "update t_transporte set cargaActual=cargaActual+@peso where idTransporte=@idEnvio";
             using (SqlConnection con = new SqlConnection(ConexionUtil.Cadena))
             {
                 con.Open();
                 using (SqlCommand com = new SqlCommand(sql, con))
                 {
                     com.Parameters.Add(new SqlParameter("@idEnvio", idTransp));
-                    com.Parameters.Add(new SqlParameter("@peso", peso*cantidad));
+                    com.Parameters.Add(new SqlParameter("@peso", peso));
                     com.ExecuteNonQuery();
                 }
             }
@@ -47,7 +47,7 @@ namespace REST.Persistencia
                 }
             }
 
-            if (peso*cantidad + cargaActual <= cargaMax)
+            if (peso + cargaActual <= cargaMax)
             {
                 return true;
 
