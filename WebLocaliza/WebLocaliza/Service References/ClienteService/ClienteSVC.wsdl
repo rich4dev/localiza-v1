@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClienteSVC" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49202/ClienteSVC.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49202/ClienteSVC.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49202/ClienteSVC.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LocalizaV1.Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClienteSVC_CrearCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCliente" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_CrearCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_ObtenerCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCliente" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_ObtenerCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_ModificarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_ModificarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_EliminarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_EliminarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_ListarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_ListarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_validaDni_InputMessage">
+    <wsdl:part name="parameters" element="tns:validaDni" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_validaDni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:validaDniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_encuentraDni_InputMessage">
+    <wsdl:part name="parameters" element="tns:encuentraDni" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_encuentraDni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:encuentraDniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_mensajes_InputMessage">
+    <wsdl:part name="parameters" element="tns:mensajes" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_mensajes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mensajesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_BuscarDni_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarDni" />
+  </wsdl:message>
+  <wsdl:message name="IClienteSVC_BuscarDni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarDniResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClienteSVC">
+    <wsdl:operation name="CrearCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/CrearCliente" message="tns:IClienteSVC_CrearCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/CrearClienteResponse" message="tns:IClienteSVC_CrearCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/ObtenerCliente" message="tns:IClienteSVC_ObtenerCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/ObtenerClienteResponse" message="tns:IClienteSVC_ObtenerCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/ModificarCliente" message="tns:IClienteSVC_ModificarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/ModificarClienteResponse" message="tns:IClienteSVC_ModificarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/EliminarCliente" message="tns:IClienteSVC_EliminarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/EliminarClienteResponse" message="tns:IClienteSVC_EliminarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/ListarCliente" message="tns:IClienteSVC_ListarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/ListarClienteResponse" message="tns:IClienteSVC_ListarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="validaDni">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/validaDni" message="tns:IClienteSVC_validaDni_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/validaDniResponse" message="tns:IClienteSVC_validaDni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="encuentraDni">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/encuentraDni" message="tns:IClienteSVC_encuentraDni_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/encuentraDniResponse" message="tns:IClienteSVC_encuentraDni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mensajes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/mensajes" message="tns:IClienteSVC_mensajes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/mensajesResponse" message="tns:IClienteSVC_mensajes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDni">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteSVC/BuscarDni" message="tns:IClienteSVC_BuscarDni_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteSVC/BuscarDniResponse" message="tns:IClienteSVC_BuscarDni_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IClienteSVC" type="tns:IClienteSVC">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearCliente">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/CrearCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCliente">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/ObtenerCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarCliente">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/ModificarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/EliminarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCliente">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/ListarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validaDni">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/validaDni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="encuentraDni">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/encuentraDni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mensajes">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/mensajes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDni">
+      <soap:operation soapAction="http://tempuri.org/IClienteSVC/BuscarDni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClienteSVC">
+    <wsdl:port name="BasicHttpBinding_IClienteSVC" binding="tns:BasicHttpBinding_IClienteSVC">
+      <soap:address location="http://localhost:49202/ClienteSVC.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
