@@ -37,6 +37,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -53,11 +55,18 @@
     <Content Include="About.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Paginas\Cliente.aspx" />
     <Content Include="Paginas\Envio.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Paginas\Logueo.aspx" />
     <Content Include="Prueba.aspx" />
+    <None Include="Service References\ClienteService\configuration91.svcinfo" />
+    <None Include="Service References\ClienteService\configuration.svcinfo" />
+    <None Include="Service References\ClienteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -95,6 +104,13 @@
       <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\Envio.cs" />
+    <Compile Include="Paginas\Cliente.aspx.cs">
+      <DependentUpon>Cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Cliente.aspx.designer.cs">
+      <DependentUpon>Cliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Envio.aspx.cs">
       <DependentUpon>Envio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -160,6 +176,11 @@
     <Compile Include="Prueba.aspx.designer.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ClienteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,6 +228,19 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ClienteService\ClienteSVC.wsdl" />
+    <None Include="Service References\ClienteService\ClienteSVC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\ClienteSVC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\ClienteSVC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\WebLocaliza.ClienteService.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Web References\TransporteService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -221,6 +255,12 @@
     <None Include="Web References\TransporteService\Transporte1.xsd">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ClienteService\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
