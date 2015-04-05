@@ -85,24 +85,6 @@ namespace WebLocaliza.Paginas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequired;
         
         /// <summary>
-        /// Control RememberMe.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox RememberMe;
-        
-        /// <summary>
-        /// Control RememberMeLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RememberMeLabel;
-        
-        /// <summary>
         /// Control LoginButton.
         /// </summary>
         /// <remarks>

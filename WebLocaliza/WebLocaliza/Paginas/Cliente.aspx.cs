@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebLocaliza.ClienteService;
+using WebLocaliza.UsuarioService;
 
 namespace WebLocaliza.Paginas
 {
@@ -19,6 +20,7 @@ namespace WebLocaliza.Paginas
         {
 
             ClienteSVCClient proxy=new ClienteSVCClient();
+            UsuarioServiceClient usu = new UsuarioServiceClient();
             bool valida = proxy.validaDni(txtdni.Text);
 
             if (valida == true)
@@ -29,7 +31,9 @@ namespace WebLocaliza.Paginas
                 {
                     proxy.CrearCliente(txtnombre.Text, txtap.Text, txtam.Text, cbogenero.SelectedValue, txtdni.Text,
                                        txtemail.Text, txtfono.Text, txtdireccion.Text, cbodistrito.SelectedItem.ToString());
-                    Label5.Text = "Cliente Registrado";
+
+                   string usuario= usu.crearUsuario(txtdni.Text,txtnombre.Text,txtap.Text);
+                    Label5.Text = "Cliente y usuario Registrado";
                 }
                 else
                 {

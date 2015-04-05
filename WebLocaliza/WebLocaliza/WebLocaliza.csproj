@@ -67,6 +67,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\UsuarioService\UsuarioService.disco" />
+    <None Include="Service References\UsuarioService\configuration91.svcinfo" />
+    <None Include="Service References\UsuarioService\configuration.svcinfo" />
+    <None Include="Service References\UsuarioService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -181,6 +188,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\UsuarioService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -241,6 +253,13 @@
     <None Include="Service References\ClienteService\WebLocaliza.ClienteService.Cliente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\UsuarioService\UsuarioService.wsdl" />
+    <None Include="Service References\UsuarioService\UsuarioService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UsuarioService\UsuarioService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web References\TransporteService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -261,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ClienteService\" />
+    <WCFMetadataStorage Include="Service References\UsuarioService\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
