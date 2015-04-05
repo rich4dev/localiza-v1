@@ -3,12 +3,12 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TestProject1.UsuarioTest;
 using TestProject1.ServiceCliente;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
 using TestProject1.Clases;
+using TestProject1.UsuarioService;
 
 namespace TestProject1
 {
@@ -91,6 +91,16 @@ namespace TestProject1
                 string mensaje = js.Deserialize<string>(error);
                 Assert.AreEqual("El Peso excede el Peso Maximo del transporte, asigne otro tranpsort", mensaje);
             }
+        }
+
+        [TestMethod]
+        public void TestCrearUsuario()
+        {
+            UsuarioServiceClient proxy = new UsuarioServiceClient();
+           
+            string user= proxy.crearUsuario("12345678","Gianpiere","Morales");
+
+            Assert.AreEqual("gmorales",user);
         }
         
     }
