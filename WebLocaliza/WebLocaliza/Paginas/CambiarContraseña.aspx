@@ -33,7 +33,7 @@
                 <p class="submitButton">
                     <asp:Button ID="btnCancelar" runat="server" CausesValidation="False" 
                         CommandName="Cancel" Text="Cancelar"/>
-                    <asp:Button ID="BtnCambiar" runat="server" Text="Cambiar contraseña" 
+                    <asp:Button ID="BtnCambiar" runat="server" Text="Cambiar contraseña" onclick="BtnCambiar_Click" 
                         />
                 </p>
             </div>
