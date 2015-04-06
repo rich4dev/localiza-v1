@@ -102,6 +102,16 @@ namespace TestProject1
 
             Assert.AreEqual("gmorales",user);
         }
+
+       [TestMethod]
+        public void TestContraseñaExpirada()
+        {
+            UsuarioServiceClient proxy = new UsuarioServiceClient();
+
+            string user = proxy.ContraseñaExpirada("gmorales");
+
+           Assert.AreEqual("La contraseña ha expirado", user);
+        }
         
     }
 }

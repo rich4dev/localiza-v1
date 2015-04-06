@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using LocalizaV1.Dominio;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace LocalizaV1.Persistencia
 {
@@ -94,6 +95,41 @@ namespace LocalizaV1.Persistencia
                 return tipo.ToString();
             }
             
+        }
+
+       public string contraseñaExpirada(string usuario)
+        {
+            int dias = 90;
+            string mensaje = null;
+
+            string sql = "SELECT fechaCreacion FROM t_usuario WHERE usuario=@idEnvio";
+            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena()))
+            {
+                con.Open();
+                using (SqlCommand com = new SqlCommand(sql, con))
+                {
+                    com.Parameters.Add(new SqlParameter("@idEnvio", usuario));
+                    using (SqlDataReader resultado = com.ExecuteReader())
+                    {
+                        if (resultado.Read())
+                        {
+                            DateTime fechaExpira = Convert.ToDateTime((DateTime)resultado["fechaCreacion"], new CultureInfo("es-ES"));
+                            fechaExpira = fechaExpira.AddDays(dias);
+
+                            if (DateTime.Now >= fechaExpira)
+                            {
+                                mensaje = "La contraseña ha expirado";
+                            }
+                            else
+                            {
+                                mensaje = "1";
+                            }
+                        }
+                    }
+                }
+            }
+            return mensaje;
+
         }
             
     }

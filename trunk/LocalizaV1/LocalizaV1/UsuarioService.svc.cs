@@ -37,5 +37,10 @@ namespace LocalizaV1
         {
             return dao.validaUsuario(usuario, password);
         }
+
+        public string ContraseñaExpirada(string usuario)
+        {
+            return dao.contraseñaExpirada(usuario);
+        }
     }
 }
