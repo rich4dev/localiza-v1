@@ -32,7 +32,7 @@ namespace WebLocaliza.Paginas
                 if (contraseñaExpirada != "1")
                 {
                     HyperLink1.Text = "Aqui";
-                    HyperLink1.NavigateUrl = "~/Paginas/CambiarContraseña.aspx";
+                    HyperLink1.NavigateUrl = "~/Paginas/CambiarContraseña.aspx?dato="+UserName.Text;
                     FailureText.Text = contraseñaExpirada + ". Haz click para cambiarla ";
 
                 }else if (msg == "2")

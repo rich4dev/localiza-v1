@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="40b0242f-61d8-472e-8bc3-c29327d3e04f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49202/Contraseña.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Contraseña.disco" MetadataType="Disco" ID="b94d8466-f248-48b8-9d91-b17ee9e968c3" SourceId="1" SourceUrl="http://localhost:49202/Contraseña.svc?disco" />
+    <MetadataFile FileName="CambiarContraseña.wsdl" MetadataType="Wsdl" ID="074af309-8575-4980-aee7-dc2126084d4d" SourceId="1" SourceUrl="http://localhost:49202/Contraseña.svc?wsdl" />
+    <MetadataFile FileName="Contraseña.xsd" MetadataType="Schema" ID="01db6d86-ffa3-4759-b9d0-02057b5d4fec" SourceId="1" SourceUrl="http://localhost:49202/Contraseña.svc?xsd=xsd1" />
+    <MetadataFile FileName="Contraseña1.xsd" MetadataType="Schema" ID="0fe27636-4e69-4034-80cc-d3093fc4319c" SourceId="1" SourceUrl="http://localhost:49202/Contraseña.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

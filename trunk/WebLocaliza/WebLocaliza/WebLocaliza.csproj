@@ -68,10 +68,24 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ContraseñaService\CambiarContraseña.wsdl" />
+    <None Include="Service References\ContraseñaService\Contraseña.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContraseñaService\Contraseña1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UsuarioService\UsuarioService.disco" />
     <None Include="Service References\UsuarioService\configuration91.svcinfo" />
     <None Include="Service References\UsuarioService\configuration.svcinfo" />
     <None Include="Service References\UsuarioService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ContraseñaService\Contraseña.disco" />
+    <None Include="Service References\ContraseñaService\configuration91.svcinfo" />
+    <None Include="Service References\ContraseñaService\configuration.svcinfo" />
+    <None Include="Service References\ContraseñaService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -196,6 +210,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ContraseñaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UsuarioService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -288,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ClienteService\" />
+    <WCFMetadataStorage Include="Service References\ContraseñaService\" />
     <WCFMetadataStorage Include="Service References\UsuarioService\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
