@@ -9,6 +9,7 @@ using System.IO;
 using System.Web.Script.Serialization;
 using TestProject1.Clases;
 using TestProject1.UsuarioService;
+using TestProject1.ContraseñaService;
 
 namespace TestProject1
 {
@@ -113,5 +114,27 @@ namespace TestProject1
            Assert.AreEqual("La contraseña ha expirado", user);
         }
         
+            [TestMethod]
+        public void TestValidaContraseñaActual()
+        {
+            ContraseñaClient proxy = new ContraseñaClient();
+
+            string user = proxy.ValidaContraseñaActual("adiaz", "pruebaTest");
+
+            Assert.AreEqual("La contraseña actual es incorrecta", user);
+        }
+
+         [TestMethod]
+        public void TestCambiarContraseña()
+        {
+            ContraseñaClient proxy = new ContraseñaClient();
+
+            string user = proxy.CambContraseña("gmorales", "pruebaTest", "pruebaTest");
+
+            Assert.AreEqual("1", user);
+        }
+
+    
     }
+    
 }

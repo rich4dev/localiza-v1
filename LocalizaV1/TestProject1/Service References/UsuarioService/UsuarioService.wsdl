@@ -18,6 +18,12 @@
   <wsdl:message name="IUsuarioService_ValidaUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidaUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IUsuarioService_ContraseñaExpirada_InputMessage">
+    <wsdl:part name="parameters" element="tns:ContraseñaExpirada" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_ContraseñaExpirada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ContraseñaExpiradaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUsuarioService">
     <wsdl:operation name="crearUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/crearUsuario" message="tns:IUsuarioService_crearUsuario_InputMessage" />
@@ -26,6 +32,10 @@
     <wsdl:operation name="ValidaUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/ValidaUsuario" message="tns:IUsuarioService_ValidaUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/ValidaUsuarioResponse" message="tns:IUsuarioService_ValidaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ContraseñaExpirada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/ContraseñaExpirada" message="tns:IUsuarioService_ContraseñaExpirada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/ContraseñaExpiradaResponse" message="tns:IUsuarioService_ContraseñaExpirada_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUsuarioService" type="tns:IUsuarioService">
@@ -41,6 +51,15 @@
     </wsdl:operation>
     <wsdl:operation name="ValidaUsuario">
       <soap:operation soapAction="http://tempuri.org/IUsuarioService/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContraseñaExpirada">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/ContraseñaExpirada" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
