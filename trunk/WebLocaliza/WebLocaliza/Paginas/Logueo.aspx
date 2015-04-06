@@ -6,6 +6,9 @@
             <span class="failureNotification">
                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>
             </span>
+           
+            <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>
+           
             <asp:ValidationSummary ID="LoginUserValidationSummary" runat="server" CssClass="failureNotification" 
                  ValidationGroup="LoginUserValidationGroup"/>
             <div class="accountInfo">

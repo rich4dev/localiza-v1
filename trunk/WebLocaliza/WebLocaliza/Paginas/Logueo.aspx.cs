@@ -12,26 +12,43 @@ namespace WebLocaliza.Paginas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
             UsuarioServiceClient proxy = new UsuarioServiceClient();
+            
 
             string msg = proxy.ValidaUsuario(UserName.Text, Password.Text);
+            string contraseñaExpirada = proxy.ContraseñaExpirada(UserName.Text);
 
-            if (msg=="2"){
-                Response.Redirect("~/Paginas/Envio.aspx");
-            }
-            else if (msg == "1")
+            if (msg != "1" && msg != "2")
             {
-                Response.Redirect("~/Paginas/Logueo.aspx");
-            }else
-            {
-                FailureText.Text=msg;
+                FailureText.Text = msg;
             }
-           
+            else
+            {
+                if (contraseñaExpirada != "1")
+                {
+                    HyperLink1.Text = "Aqui";
+                    HyperLink1.NavigateUrl = "~/Paginas/CambiarContraseña.aspx";
+                    FailureText.Text = contraseñaExpirada + ". Haz click para cambiarla ";
+
+                }else if (msg == "2")
+                {
+                    Response.Redirect("~/Paginas/Envio.aspx");
+
+                }
+                else if (msg == "1")
+                {
+                    Response.Redirect("~/Paginas/Logueo.aspx");
+                }
+                else
+                {
+                    FailureText.Text = msg;
+                }
+            }
         }
     }
 }
