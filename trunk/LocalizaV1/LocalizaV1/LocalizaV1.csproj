@@ -59,6 +59,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Contraseña.svc" />
     <Content Include="ClienteSVC.svc" />
     <EmbeddedResource Include="Dominio\Cliente.hbm.xml" />
     <Content Include="Transporte.svc" />
@@ -72,15 +73,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contraseña.svc.cs">
+      <DependentUpon>Contraseña.svc</DependentUpon>
+    </Compile>
     <Compile Include="ClienteSVC.svc.cs">
       <DependentUpon>ClienteSVC.svc</DependentUpon>
     </Compile>
     <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\Usuario.cs" />
+    <Compile Include="IContraseña.cs" />
     <Compile Include="IClienteSVC.cs" />
     <Compile Include="ITransporte.cs" />
     <Compile Include="IUsuarioService.cs" />
     <Compile Include="Persistencia\BaseDAO.cs" />
+    <Compile Include="Persistencia\ContraseñaDAO.cs" />
     <Compile Include="Persistencia\ClienteDAO.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
     <Compile Include="Persistencia\NHibernateHelper.cs" />
