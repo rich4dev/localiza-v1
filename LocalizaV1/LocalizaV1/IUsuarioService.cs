@@ -16,5 +16,8 @@ namespace LocalizaV1
 
         [OperationContract]
         string ValidaUsuario(string usuario,string password);
+
+        [OperationContract]
+        string ContraseñaExpirada(string usuario);
     }
 }
