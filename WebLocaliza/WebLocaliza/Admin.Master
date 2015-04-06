@@ -21,7 +21,7 @@
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
+                         [ <a href="~/Paginas/Logueo.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                         Pantalla de bienvenida <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!

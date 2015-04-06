@@ -55,6 +55,7 @@
     <Content Include="About.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Paginas\CambiarContraseña.aspx" />
     <Content Include="Paginas\Cliente.aspx" />
     <Content Include="Paginas\Envio.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -111,6 +112,13 @@
       <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\Envio.cs" />
+    <Compile Include="Paginas\CambiarContraseña.aspx.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\CambiarContraseña.aspx.designer.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Cliente.aspx.cs">
       <DependentUpon>Cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
