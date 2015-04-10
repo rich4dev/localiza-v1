@@ -21,7 +21,7 @@
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        [ <a href="~/Paginas/Logueo.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
+                        [ <a href="~/Paginas/Logueo.aspx" ID="HeadLoginStatus" runat="server">Cerrar sesión</a> ]
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                         Pantalla de bienvenida <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
@@ -33,7 +33,7 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Paginas/Seguimiento.aspx" Text="Seguimiento Pedido"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
+                       
                     </Items>
                 </asp:Menu>
             </div>

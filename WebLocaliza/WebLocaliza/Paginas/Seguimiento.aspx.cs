@@ -15,9 +15,7 @@ namespace WebLocaliza.Paginas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack) {
-               
-            }
+            
         }
 
         protected void btnBUscar_Click(object sender, EventArgs e)
@@ -29,6 +27,7 @@ namespace WebLocaliza.Paginas
 
             try
             {
+                GMap1.reset();
                 ubi = proxy.listaUbicacion(TextBox1.Text);
                 GLatLng milocacion = new GLatLng(ubi.latitud, ubi.longitud);
                 GMap1.setCenter(milocacion, 14);
