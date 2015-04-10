@@ -42,7 +42,7 @@ namespace WebLocaliza.Paginas
                 }
                 else if (msg == "1")
                 {
-                    Response.Redirect("~/Paginas/Logueo.aspx");
+                    Response.Redirect("~/Paginas/Seguimiento.aspx");
                 }
                 else
                 {

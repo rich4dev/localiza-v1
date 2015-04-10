@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GMaps, Version=4.1.0.5, Culture=neutral, PublicKeyToken=564d55b144e7aa5a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -61,6 +64,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Paginas\Logueo.aspx" />
+    <Content Include="Paginas\Seguimiento.aspx" />
     <Content Include="Prueba.aspx" />
     <None Include="Service References\ClienteService\configuration91.svcinfo" />
     <None Include="Service References\ClienteService\configuration.svcinfo" />
@@ -75,6 +79,19 @@
     <None Include="Service References\ContraseñaService\Contraseña1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\UbicacionService\UbicacionService.wsdl" />
+    <None Include="Service References\UbicacionService\UbicacionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UbicacionService\UbicacionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UbicacionService\UbicacionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UbicacionService\WebLocaliza.UbicacionService.Ubicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\UsuarioService\UsuarioService.disco" />
     <None Include="Service References\UsuarioService\configuration91.svcinfo" />
     <None Include="Service References\UsuarioService\configuration.svcinfo" />
@@ -86,6 +103,12 @@
     <None Include="Service References\ContraseñaService\configuration91.svcinfo" />
     <None Include="Service References\ContraseñaService\configuration.svcinfo" />
     <None Include="Service References\ContraseñaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UbicacionService\configuration91.svcinfo" />
+    <None Include="Service References\UbicacionService\configuration.svcinfo" />
+    <None Include="Service References\UbicacionService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -192,6 +215,13 @@
     <Compile Include="Paginas\Logueo.aspx.designer.cs">
       <DependentUpon>Logueo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Seguimiento.aspx.cs">
+      <DependentUpon>Seguimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Seguimiento.aspx.designer.cs">
+      <DependentUpon>Seguimiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -211,6 +241,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\ContraseñaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UbicacionService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -308,6 +343,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ClienteService\" />
     <WCFMetadataStorage Include="Service References\ContraseñaService\" />
+    <WCFMetadataStorage Include="Service References\UbicacionService\" />
     <WCFMetadataStorage Include="Service References\UsuarioService\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
