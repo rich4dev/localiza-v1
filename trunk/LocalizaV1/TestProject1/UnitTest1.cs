@@ -10,6 +10,7 @@ using System.Web.Script.Serialization;
 using TestProject1.Clases;
 using TestProject1.UsuarioService;
 using TestProject1.ContraseñaService;
+using TestProject1.UbicacionService;
 
 namespace TestProject1
 {
@@ -134,6 +135,33 @@ namespace TestProject1
             Assert.AreEqual("1", user);
         }
 
+         [TestMethod]
+         public void TestRegistrarUbicacion()
+         {
+             UbicacionServiceClient proxy = new UbicacionServiceClient();
+
+             Ubicacion ubi = new Ubicacion();
+             ubi.idEnvio = "em124";
+             ubi.latitud = -12.1017361;
+             ubi.longitud= -77.0001988;
+             string user = proxy.actualizaUbicacion(ubi);
+
+             Assert.AreEqual("em124",user);
+         }
+
+         [TestMethod]
+         public void TestObtenerUbicacion()
+         {
+             UbicacionServiceClient proxy = new UbicacionServiceClient();
+
+             Ubicacion ubi = new Ubicacion();
+
+             ubi = proxy.listaUbicacion("em124");
+
+             Assert.AreEqual(ubi.latitud, -12.1017361);
+             Assert.AreEqual(ubi.longitud, -77.0001988);
+         }
+             
     
     }
     

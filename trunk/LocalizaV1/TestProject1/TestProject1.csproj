@@ -38,6 +38,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
@@ -50,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Envios.cs" />
+    <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ContraseñaService\Reference.cs">
@@ -58,6 +60,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\ServiceCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UbicacionService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -94,6 +101,19 @@
     <None Include="Service References\ServiceCliente\TestProject1.ServiceCliente.Cliente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\UbicacionService\TestProject1.UbicacionService.Ubicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UbicacionService\UbicacionService.wsdl" />
+    <None Include="Service References\UbicacionService\UbicacionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UbicacionService\UbicacionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UbicacionService\UbicacionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UsuarioService\UsuarioService.wsdl" />
     <None Include="Service References\UsuarioService\UsuarioService.xsd">
       <SubType>Designer</SubType>
@@ -105,6 +125,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ContraseñaService\" />
     <WCFMetadataStorage Include="Service References\ServiceCliente\" />
+    <WCFMetadataStorage Include="Service References\UbicacionService\" />
     <WCFMetadataStorage Include="Service References\UsuarioService\" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +169,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ContraseñaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UbicacionService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UbicacionService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UbicacionService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
