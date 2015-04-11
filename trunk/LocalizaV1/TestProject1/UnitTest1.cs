@@ -141,12 +141,12 @@ namespace TestProject1
              UbicacionServiceClient proxy = new UbicacionServiceClient();
 
              Ubicacion ubi = new Ubicacion();
-             ubi.idEnvio = "em124";
+             ubi.idEnvio = "EM126";
              ubi.latitud = -12.1017361;
              ubi.longitud= -77.0001988;
              string user = proxy.actualizaUbicacion(ubi);
 
-             Assert.AreEqual("em124",user);
+             Assert.AreEqual("EM126",user);
          }
 
          [TestMethod]
