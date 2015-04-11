@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{3F9884ED-4086-47A7-88B8-07BF34B4C587}"
 	ProjectSection(SolutionItems) = preProject
-		Scripts\DB_Localiza.bak = Scripts\DB_Localiza.bak
+		Scripts\bd_localiza_final.bak = Scripts\bd_localiza_final.bak
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{0C929691-AA85-4C2E-916F-7300D5D74A35}"
