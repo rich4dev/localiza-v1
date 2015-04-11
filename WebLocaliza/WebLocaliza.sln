@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLocaliza", "WebLocaliza\WebLocaliza.csproj", "{B3B7E920-178A-4BD8-BB4B-118A77ADB718}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libreria", "Libreria", "{4C8DBB49-8EE7-4CA0-A629-4D179BE5164A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{4C8DBB49-8EE7-4CA0-A629-4D179BE5164A}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\Downloads\gmaps_v4_1_0_5\GMaps.dll = ..\..\..\..\..\Downloads\gmaps_v4_1_0_5\GMaps.dll
+		..\..\LocalizaV1-Final\Librerias\GMaps.dll = ..\..\LocalizaV1-Final\Librerias\GMaps.dll
 	EndProjectSection
 EndProject
 Global
